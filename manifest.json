@@ -1,0 +1,31 @@
+{
+    "manifest_version" : 2,
+    "name" : "SalesForce",
+    "description" : "This extension help to handle cases in salesforce",
+    "version" : "1.0",
+    "browser_action" : {
+        "default_icon" : "icon.gif",
+        "default_popup" : "test.html"
+    },
+    "permissions" : [
+        "contextMenus"
+    ],
+    "content_scripts" : [{
+        "matches" : ["http://*/*", "https://*/*"],
+        "css" : ["style.css"],
+        "js" : ["require.js","lib/util.js","lib/ftr.js","lib/lqpu.js","jquery-3.2.1.min.js","content_script.js"]
+    }],
+    "web_accessible_resources" : [
+        "lib/util.js",
+        "lib/ftr.js",
+        "lib/lqpu.js",
+        "toolbar.html",
+        "style.css"
+    ],
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+    "icons" : {
+        "16" : "icon-search-black.png"
+    }
+}
